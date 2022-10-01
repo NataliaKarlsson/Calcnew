@@ -14,22 +14,21 @@ namespace Calcnew.Test
 
         }
 
-        // Test with theory. Inlinedata has two in values and the last value is the expected result.
+        
         [Theory]
-        [InlineData(2.1, 2, 4.1)]// 2.1 + 2 = 4.1
-        [InlineData(3.1, -2.5, 0.6)]//3.1 + -2.5=0.6
+        [InlineData(2.1, 2, 4.1)]
+        [InlineData(3.1, -2.5, 0.6)]
         [InlineData(4, 2, 6)]
         [InlineData(2.3, 2.2, 4.5)]
         [InlineData(2, 0, 2)]
         [InlineData(0, 0, 0)]
         public void TestAddIs(double numberOne, double numberTwo, double expected)
         {
-            //Create a new objekt of type calculator
+           
             Calculator calculator = new Calculator();
 
-            //Test the calculator by insert numbers in to the method Add in calculator class.
-            //Compare it to the expected result.
-            Assert.Equal(expected, Calculator.Add(numberOne, numberTwo), 1);
+            
+            Assert.Equal(expected, Calculator.Add(numberOne, numberTwo), 1);// this function did not before
         }
         
         [Fact]
@@ -58,7 +57,7 @@ namespace Calcnew.Test
         }
 
 
-        // Test with theory. Inlinedata has two in values and the last value is the expected result.
+        
         [Theory]
         [InlineData(2.1, 2, 0.1)]
         [InlineData(3.1, 2.5, 0.6)]
@@ -68,19 +67,18 @@ namespace Calcnew.Test
         [InlineData(0, 0, 0)]
         public void TestSubIs(double numberOne, double numberTwo, double expected)
         {
-            //Create a new objekt of type calculator
+            
             Calculator calculator = new Calculator();
 
-            //Test the calculator by insert numbers in to the method Sub in calculator class.
-            //Compare it to the expected result.
-            Assert.Equal(expected, calculator.Sub(numberOne, numberTwo), 1);
+            
+            Assert.Equal(expected, calculator.Sub(numberOne, numberTwo), 1);// what does it meen 1?
         }
         [Fact]
         public void TestSubIsNot()
         {
             //Arrange
             Calculator calculator = new Calculator();
-            double expected = -4.5;
+            double expected = -4.5;// why we expect this numbmer?
             //Act and Assert
             Assert.NotEqual(expected, calculator.Sub(1.1, 3));
         }
@@ -101,7 +99,7 @@ namespace Calcnew.Test
         }
 
 
-        // Test with theory. Inlinedata has two in values and the last value is the expected result.
+        
         [Theory]
         [InlineData(2.2, 10, 22)]
         [InlineData(-3.1, -20, 62)]
@@ -111,11 +109,10 @@ namespace Calcnew.Test
         [InlineData(0, 0, 0)]
         public void TestMultiIs(double numberOne, double numberTwo, double expected)
         {
-            //Create a new objekt of type calculator
+            
             Calculator calculator = new Calculator();
 
-            //Test the calculator by insert numbers in to the method Multi in calculator class.
-            //Compare it to the expected result.
+            
             Assert.Equal(expected, calculator.Multi(numberOne, numberTwo), 1);
         }
 
@@ -124,12 +121,12 @@ namespace Calcnew.Test
         {
             //Arrange
             Calculator calculator = new Calculator();
-            double expected = -2;
+            double expected = -2;// ?
             //Act and Assert
             Assert.NotEqual(expected, calculator.Multi(1.1, 3));
         }
 
-        // Test with theory. Inlinedata has two in values and the last value is the expected result.
+     
         [Theory]
         [InlineData(2.2, 22, 0.1)]
         [InlineData(-300, -20, 15)]
@@ -138,15 +135,14 @@ namespace Calcnew.Test
         [InlineData(0, 2, 0)]
         public void TestDivIs(double numberOne, double numberTwo, double expected)
         {
-            //Create a new objekt of type calculator
+            
             Calculator calculator = new Calculator();
 
-            //Test the calculator by insert numbers in to the method Div in calculator class.
-            //Compare it to the expected result.
+            
             Assert.Equal(expected, calculator.Div(numberOne, numberTwo), 1);
         }
 
-        //Test of thrown DivideByZeroException
+        
         [Fact]
         public void TestDivThrowsException()
         {
